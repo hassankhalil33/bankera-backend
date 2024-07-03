@@ -20,9 +20,10 @@ const userSchema = new mongoose.Schema({
     trim: true
   },
 
-  accounts: [
-    accountsSchema
-  ],
+  accounts: [{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "Account"
+  }],
 
   account_count: {
     type: Number,
