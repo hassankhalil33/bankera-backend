@@ -1,19 +1,14 @@
 const mongoose = require("mongoose");
 
 const transactionSchema = new mongoose.Schema({
-  _id: {
-    type: mongoose.Schema.Types.ObjectId,
-    unique: true
-  },
-
   sender: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: "Account"
+    ref: 'Account'
   },
 
   receiver: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: "Account"
+    ref: 'Account'
   },
 
   amount: {
@@ -33,5 +28,5 @@ const transactionSchema = new mongoose.Schema({
   }
 });
 
-const Transaction = mongoose.model("Transaction", transactionSchema);
+const Transaction = mongoose.model('Transaction', transactionSchema);
 module.exports = Transaction;

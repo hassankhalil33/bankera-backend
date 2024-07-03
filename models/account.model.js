@@ -1,14 +1,9 @@
 const mongoose = require("mongoose");
 
 const accountSchema = new mongoose.Schema({
-  _id: {
-    type: mongoose.Schema.Types.ObjectId,
-    unique: true
-  },
-
   user_id: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: "User"
+    ref: 'User'
   },
 
   money: {
@@ -24,8 +19,8 @@ const accountSchema = new mongoose.Schema({
   },
 
   transactions: [{
-    _id: mongoose.Schema.Types.ObjectId,
-    ref: "Transaction"
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Transaction'
   }],
 
   date_created: {
@@ -39,5 +34,5 @@ const accountSchema = new mongoose.Schema({
   }
 });
 
-const Account = mongoose.model("Account", accountSchema);
+const Account = mongoose.model('Account', accountSchema);
 module.exports = Account;

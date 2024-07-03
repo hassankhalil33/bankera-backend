@@ -2,10 +2,10 @@ const Account = require("../models/account.model");
 const User = require("../models/user.model");
 
 const getUser = async (req, res) => {
-  const userId = req.params.id;
+  const username = req.params.username;
 
-  const user = await User.findById({
-    _id: userId
+  const user = await User.findOne({
+    username: username
   });
 
   res.json(user);

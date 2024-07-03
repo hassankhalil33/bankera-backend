@@ -1,11 +1,6 @@
 const mongoose = require("mongoose");
 
 const userSchema = new mongoose.Schema({
-  _id: {
-    type: mongoose.Schema.Types.ObjectId,
-    unique: true
-  },
-
   username: {
     type: String,
     required: "username is required",
@@ -28,7 +23,7 @@ const userSchema = new mongoose.Schema({
 
   accounts: [{
     type: mongoose.Schema.Types.ObjectId,
-    ref: "Account"
+    ref: 'Account'
   }],
 
   account_count: {
@@ -56,5 +51,5 @@ const userSchema = new mongoose.Schema({
   }
 });
 
-const User = mongoose.model("User", userSchema);
+const User = mongoose.model('User', userSchema);
 module.exports = User;
