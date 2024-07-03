@@ -8,15 +8,21 @@ const userSchema = new mongoose.Schema({
 
   username: {
     type: String,
-    required: 'username is required',
+    required: "username is required",
     unique: true,
     trim: true
   },
 
   password: {
     type: String,
-    required: 'password is required',
+    required: "password is required",
     select: false,
+    trim: true
+  },
+
+  email: {
+    type: String,
+    required: "email is required",
     trim: true
   },
 
@@ -27,7 +33,7 @@ const userSchema = new mongoose.Schema({
 
   account_count: {
     type: Number,
-    default: 0,
+    default: 1,
     max: 5,
     trim: true
   },

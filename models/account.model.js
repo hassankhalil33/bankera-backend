@@ -1,5 +1,4 @@
 const mongoose = require("mongoose");
-const { transactionSchema } = require("../models/transaction.model");
 
 const accountSchema = new mongoose.Schema({
   _id: {
@@ -24,9 +23,10 @@ const accountSchema = new mongoose.Schema({
     trim: true
   },
 
-  transactions: [
-    transactionSchema
-  ],
+  transactions: [{
+    _id: mongoose.Schema.Types.ObjectId,
+    ref: "Transaction"
+  }],
 
   date_created: {
     type: Date,
