@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const { transactionSchema } = require("../models/transaction.model");
 
 const accountSchema = new mongoose.Schema({
   _id: {
